@@ -7,16 +7,16 @@ const rarManager = require("../managers/rarManager"),
  */
 async function rar(opt) {
     const archivePath = opt.path || "./data/test.rar";
-    const alphabet = "01";
+    const alphabet = "0123456789";
     const start = 3;
     const end = 3;
-    await selectionManager.prepare(archivePath, alphabet);
+    //await selectionManager.prepare(archivePath, alphabet);
     console.log(`START FOR ${archivePath}`);
 
     const startTime = new Date();
-    const countChecked = await selectionManager.select(archivePath, rarManager.check2, start, end, alphabet);
+    const countChecked = await selectionManager.doSelection(rarManager.checker, archivePath, start, end, alphabet);
     console.log(`COUNT CHECKED: ${countChecked}`);
-    console.log(`PROCESS TIME: ${new Date() - startTime}`);
+    console.log(`PROCESS TIME: ${(new Date() - startTime)/1000}`);
 }
 
 async function zip() {

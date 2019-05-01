@@ -1,24 +1,18 @@
-const {unrar, list} = require('unrar-promise');
+const unrar = require("node-unrar-js"),
+      fs = require("fs")
 
-async function check(path, password) {
-    try {
-        await unrar(path, "./data/res", {password});
-        return 1;
-    } catch {
-        return 0;
-    }
-}
-
-async function check2(path, password) {
-    try {
-        await unrar(`./data/tmp/${password[0]}.rar`, "./data/res", {password});
-        return 1;
-    } catch {
-        return 0;
-    }
+function checker(path) {
+   const buf = Uint8Array.from(fs.readFileSync(path)).buffer;
+   return (password) => {
+        const extractor = unrar.createExtractorFromData(buf, password);
+        var list = extractor.getFileList();
+        if (list[0].state === "SUCCESS") {
+            console.log(list);
+            console.log(extractor);
+        }
+   }
 }
 
 module.exports = {
-    check,
-    check
+    checker
 }

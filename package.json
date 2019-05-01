@@ -5,6 +5,7 @@
   "main": "console.js",
   "dependencies": {
     "co": "^4.6.0",
+    "node-unrar-js": "^0.8.1",
     "optimist": "^0.6.1",
     "unrar-promise": "^2.0.1"
   },
