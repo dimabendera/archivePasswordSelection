@@ -1,0 +1,25 @@
+{
+  "name": "archivepasswordselection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "console.js",
+  "dependencies": {
+    "co": "^4.6.0",
+    "optimist": "^0.6.1",
+    "unrar-promise": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimabendera/archivePasswordSelection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimabendera/archivePasswordSelection/issues"
+  },
+  "homepage": "https://github.com/dimabendera/archivePasswordSelection#readme"
+}
